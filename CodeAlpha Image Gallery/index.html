@@ -1,0 +1,1920 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Image Gallery</title>
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS File -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================================
+         MAIN GALLERY APP
+    ================================= -->
+
+    <div class="gallery-app">
+
+
+        <!-- ================================
+             LEFT SIDEBAR
+        ================================= -->
+
+        <aside class="sidebar">
+
+            <!-- Logo / Brand -->
+            <div class="sidebar-logo">
+                <h1>Gallery</h1>
+                <p>Explore & Save</p>
+            </div>
+
+
+            <!-- Sidebar Navigation -->
+            <nav class="sidebar-nav">
+
+                <a href="#" class="sidebar-link active" data-section="featured">
+                    <span class="sidebar-icon">✦</span>
+                    <span>Featured</span>
+                </a>
+
+                <a href="#" class="sidebar-link" data-section="recent">
+                    <span class="sidebar-icon">◷</span>
+                    <span>Recent</span>
+                </a>
+
+                <a href="#" class="sidebar-link" data-section="popular">
+                    <span class="sidebar-icon">🔥</span>
+                    <span>Popular</span>
+                </a>
+
+                <a href="#" class="sidebar-link" data-section="collections">
+                    <span class="sidebar-icon">▦</span>
+                    <span>Collections</span>
+                </a>
+
+                <a href="#" class="sidebar-link" data-section="saved">
+                    <span class="sidebar-icon">📌</span>
+                    <span>Saved</span>
+                </a>
+
+                <a href="#" class="sidebar-link" data-section="favorites">
+                    <span class="sidebar-icon">♥</span>
+                    <span>Favorites</span>
+                </a>
+
+            </nav>
+
+
+            <!-- Sidebar Bottom -->
+            <div class="sidebar-bottom">
+
+                <a href="#" class="sidebar-bottom-link">
+                    <span>⚙</span>
+                    <span>Settings</span>
+                </a>
+
+                <a href="#" class="sidebar-bottom-link">
+                    <span>?</span>
+                    <span>Help</span>
+                </a>
+
+            </div>
+
+        </aside>
+
+
+        <!-- ================================
+             MAIN CONTENT
+        ================================= -->
+
+        <main class="main-content">
+
+
+            <!-- ================================
+                 TOP HEADER
+            ================================= -->
+
+            <header class="top-header">
+
+                <!-- Gallery Title -->
+                <div class="header-title">
+                    <h2>Image Gallery</h2>
+                    <p>Discover beautiful moments</p>
+                </div>
+
+
+                <!-- Search -->
+                <div class="search-box">
+
+                    <span class="search-icon">⌕</span>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search images..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <!-- Header Actions -->
+                <div class="header-actions">
+
+                    <!-- Favorites -->
+                    <button
+                        type="button"
+                        class="header-favorite"
+                        id="headerFavoritesBtn"
+                        title="Favorites"
+                    >
+                        ♥
+                    </button>
+
+
+                    <!-- Upload -->
+                    <button
+                        type="button"
+                        class="upload-btn"
+                        id="uploadBtn"
+                    >
+                        <span>+</span>
+                        Upload
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- ================================
+                 CATEGORY NAVIGATION
+            ================================= -->
+
+            <nav class="category-nav" id="categoryNav">
+
+                <button
+                    type="button"
+                    class="category-btn active"
+                    data-category="all"
+                >
+                    All
+                </button>
+
+                <button
+                    type="button"
+                    class="category-btn"
+                    data-category="nature"
+                >
+                    Nature
+                </button>
+
+                <button
+                    type="button"
+                    class="category-btn"
+                    data-category="animals"
+                >
+                    Animals
+                </button>
+
+                <button
+                    type="button"
+                    class="category-btn"
+                    data-category="food"
+                >
+                    Food
+                </button>
+
+                <button
+                    type="button"
+                    class="category-btn"
+                    data-category="cars"
+                >
+                    Cars
+                </button>
+
+                <button
+                    type="button"
+                    class="category-btn"
+                    data-category="characters"
+                >
+                    Characters
+                </button>
+
+                <button
+                    type="button"
+                    class="category-btn"
+                    data-category="art"
+                >
+                    Art
+                </button>
+
+                <button
+                    type="button"
+                    class="category-btn favorites-category"
+                    data-category="favorites"
+                >
+                    ♥ Favorites
+                </button>
+
+            </nav>
+
+
+            <!-- ================================
+                 PAGE HEADING
+            ================================= -->
+
+            <section class="gallery-heading">
+
+                <div>
+                    <span class="section-label">EXPLORE</span>
+
+                    <h2 id="galleryTitle">
+                        All Photos
+                    </h2>
+
+                    <p id="gallerySubtitle">
+                        Explore our collection of beautiful images
+                    </p>
+                </div>
+
+                <!-- Image Count -->
+                <div class="image-count">
+                    <span id="imageCount">0</span>
+                    <span>Photos</span>
+                </div>
+
+            </section>
+
+
+            <!-- ================================
+                 GALLERY AREA
+                 PART 02 MEIN YAHAN IMAGES AYENGI
+            ================================= -->
+
+          <!-- ================================
+     GALLERY AREA
+================================= -->
+
+<section
+    class="gallery-container"
+    id="galleryContainer"
+>
+
+
+    <!-- ================================
+         NATURE IMAGES
+    ================================= -->
+
+    <article
+        class="gallery-card"
+        data-category="nature"
+        data-section="featured"
+        data-featured="true"
+        data-popular="true"
+        data-recent="false"
+        data-collection="landscapes"
+    >
+
+        <div class="image-wrapper">
+
+            <img
+                src="images/nature/nature-01.jpg"
+                alt="Beautiful mountain landscape"
+            >
+
+            <div class="image-overlay">
+
+                <button
+                    type="button"
+                    class="image-action favorite-btn"
+                    aria-label="Add to favorites"
+                >
+                    ♥
+                </button>
+
+                <button
+                    type="button"
+                    class="image-action view-btn"
+                    aria-label="View image"
+                >
+                    ⛶
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="image-info">
+
+            <div>
+                <h3>Mountain Escape</h3>
+                <p>Nature</p>
+            </div>
+
+            <button
+                type="button"
+                class="save-btn"
+                aria-label="Save image"
+            >
+                📌
+            </button>
+
+        </div>
+
+    </article>
+
+
+    <article
+        class="gallery-card"
+        data-category="nature"
+        data-section="recent"
+        data-featured="false"
+        data-popular="true"
+        data-recent="true"
+        data-collection="water"
+    >
+
+        <div class="image-wrapper">
+
+            <img
+                src="images/nature/nature-02.jpg"
+                alt="Beautiful waterfall"
+            >
+
+            <div class="image-overlay">
+
+                <button
+                    type="button"
+                    class="image-action favorite-btn"
+                    aria-label="Add to favorites"
+                >
+                    ♥
+                </button>
+
+                <button
+                    type="button"
+                    class="image-action view-btn"
+                    aria-label="View image"
+                >
+                    ⛶
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="image-info">
+
+            <div>
+                <h3>Hidden Waterfall</h3>
+                <p>Nature</p>
+            </div>
+
+            <button
+                type="button"
+                class="save-btn"
+                aria-label="Save image"
+            >
+                📌
+            </button>
+
+        </div>
+
+    </article>
+
+
+    <article
+        class="gallery-card"
+        data-category="nature"
+        data-section="popular"
+        data-featured="true"
+        data-popular="true"
+        data-recent="false"
+        data-collection="forests"
+    >
+
+        <div class="image-wrapper">
+
+            <img
+                src="images/nature/nature-03.jpg"
+                alt="Green forest"
+            >
+
+            <div class="image-overlay">
+
+                <button
+                    type="button"
+                    class="image-action favorite-btn"
+                    aria-label="Add to favorites"
+                >
+                    ♥
+                </button>
+
+                <button
+                    type="button"
+                    class="image-action view-btn"
+                    aria-label="View image"
+                >
+                    ⛶
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="image-info">
+
+            <div>
+                <h3>Green Forest</h3>
+                <p>Nature</p>
+            </div>
+
+            <button
+                type="button"
+                class="save-btn"
+                aria-label="Save image"
+            >
+                📌
+            </button>
+
+        </div>
+
+    </article>
+
+
+    <article
+        class="gallery-card"
+        data-category="nature"
+        data-section="recent"
+        data-featured="false"
+        data-popular="false"
+        data-recent="true"
+        data-collection="landscapes"
+    >
+
+        <div class="image-wrapper">
+
+            <img
+                src="images/nature/nature-04.jpg"
+                alt="Peaceful lake"
+            >
+
+            <div class="image-overlay">
+
+                <button
+                    type="button"
+                    class="image-action favorite-btn"
+                    aria-label="Add to favorites"
+                >
+                    ♥
+                </button>
+
+                <button
+                    type="button"
+                    class="image-action view-btn"
+                    aria-label="View image"
+                >
+                    ⛶
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="image-info">
+
+            <div>
+                <h3>Peaceful Lake</h3>
+                <p>Nature</p>
+            </div>
+
+            <button
+                type="button"
+                class="save-btn"
+                aria-label="Save image"
+            >
+                📌
+            </button>
+
+        </div>
+
+    </article>
+
+
+    <!-- ================================
+         ANIMAL IMAGES
+    ================================= -->
+
+    <article
+        class="gallery-card"
+        data-category="animals"
+        data-section="popular"
+        data-featured="true"
+        data-popular="true"
+        data-recent="false"
+        data-collection="wildlife"
+    >
+
+        <div class="image-wrapper">
+
+            <img
+                src="images/animals/animal-01.jpg"
+                alt="Wild animal"
+            >
+
+            <div class="image-overlay">
+
+                <button
+                    type="button"
+                    class="image-action favorite-btn"
+                    aria-label="Add to favorites"
+                >
+                    ♥
+                </button>
+
+                <button
+                    type="button"
+                    class="image-action view-btn"
+                    aria-label="View image"
+                >
+                    ⛶
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="image-info">
+
+            <div>
+                <h3>Wild Beauty</h3>
+                <p>Animals</p>
+            </div>
+
+            <button
+                type="button"
+                class="save-btn"
+                aria-label="Save image"
+            >
+                📌
+            </button>
+
+        </div>
+
+    </article>
+
+
+    <article
+        class="gallery-card"
+        data-category="animals"
+        data-section="recent"
+        data-featured="false"
+        data-popular="true"
+        data-recent="true"
+        data-collection="pets"
+    >
+
+        <div class="image-wrapper">
+
+            <img
+                src="images/animals/animal-02.jpg"
+                alt="Cute animal"
+            >
+
+            <div class="image-overlay">
+
+                <button
+                    type="button"
+                    class="image-action favorite-btn"
+                    aria-label="Add to favorites"
+                >
+                    ♥
+                </button>
+
+                <button
+                    type="button"
+                    class="image-action view-btn"
+                    aria-label="View image"
+                >
+                    ⛶
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="image-info">
+
+            <div>
+                <h3>Cute Friend</h3>
+                <p>Animals</p>
+            </div>
+
+            <button
+                type="button"
+                class="save-btn"
+                aria-label="Save image"
+            >
+                📌
+            </button>
+
+        </div>
+
+    </article>
+
+
+    <article
+        class="gallery-card"
+        data-category="animals"
+        data-section="featured"
+        data-featured="true"
+        data-popular="false"
+        data-recent="false"
+        data-collection="wildlife"
+    >
+
+        <div class="image-wrapper">
+
+            <img
+                src="images/animals/animal-03.jpg"
+                alt="Beautiful wildlife"
+            >
+
+            <div class="image-overlay">
+
+                <button
+                    type="button"
+                    class="image-action favorite-btn"
+                    aria-label="Add to favorites"
+                >
+                    ♥
+                </button>
+
+                <button
+                    type="button"
+                    class="image-action view-btn"
+                    aria-label="View image"
+                >
+                    ⛶
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="image-info">
+
+            <div>
+                <h3>Wild Moments</h3>
+                <p>Animals</p>
+            </div>
+
+            <button
+                type="button"
+                class="save-btn"
+                aria-label="Save image"
+            >
+                📌
+            </button>
+
+        </div>
+
+    </article>
+
+
+    <!-- ================================
+         FOOD IMAGES
+    ================================= -->
+
+    <article
+        class="gallery-card"
+        data-category="food"
+        data-section="popular"
+        data-featured="true"
+        data-popular="true"
+        data-recent="false"
+        data-collection="favorites-food"
+    >
+
+        <div class="image-wrapper">
+
+            <img
+                src="images/food/food-01.jpg"
+                alt="Delicious food"
+            >
+
+            <div class="image-overlay">
+
+                <button
+                    type="button"
+                    class="image-action favorite-btn"
+                    aria-label="Add to favorites"
+                >
+                    ♥
+                </button>
+
+                <button
+                    type="button"
+                    class="image-action view-btn"
+                    aria-label="View image"
+                >
+                    ⛶
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="image-info">
+
+            <div>
+                <h3>Delicious Moment</h3>
+                <p>Food</p>
+            </div>
+
+            <button
+                type="button"
+                class="save-btn"
+                aria-label="Save image"
+            >
+                📌
+            </button>
+
+        </div>
+
+    </article>
+
+
+    <article
+        class="gallery-card"
+        data-category="food"
+        data-section="recent"
+        data-featured="false"
+        data-popular="false"
+        data-recent="true"
+        data-collection="desserts"
+    >
+
+        <div class="image-wrapper">
+
+            <img
+                src="images/food/food-02.jpg"
+                alt="Beautiful dessert"
+            >
+
+            <div class="image-overlay">
+
+                <button
+                    type="button"
+                    class="image-action favorite-btn"
+                    aria-label="Add to favorites"
+                >
+                    ♥
+                </button>
+
+                <button
+                    type="button"
+                    class="image-action view-btn"
+                    aria-label="View image"
+                >
+                    ⛶
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="image-info">
+
+            <div>
+                <h3>Sweet Delight</h3>
+                <p>Food</p>
+            </div>
+
+            <button
+                type="button"
+                class="save-btn"
+                aria-label="Save image"
+            >
+                📌
+            </button>
+
+        </div>
+
+    </article>
+
+
+    <!-- ================================
+         CARS IMAGES
+    ================================= -->
+
+    <article
+        class="gallery-card"
+        data-category="cars"
+        data-section="popular"
+        data-featured="true"
+        data-popular="true"
+        data-recent="false"
+        data-collection="luxury-cars"
+    >
+
+        <div class="image-wrapper">
+
+            <img
+                src="images/cars/car-01.jpg"
+                alt="Luxury car"
+            >
+
+            <div class="image-overlay">
+
+                <button
+                    type="button"
+                    class="image-action favorite-btn"
+                    aria-label="Add to favorites"
+                >
+                    ♥
+                </button>
+
+                <button
+                    type="button"
+                    class="image-action view-btn"
+                    aria-label="View image"
+                >
+                    ⛶
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="image-info">
+
+            <div>
+                <h3>Luxury Drive</h3>
+                <p>Cars</p>
+            </div>
+
+            <button
+                type="button"
+                class="save-btn"
+                aria-label="Save image"
+            >
+                📌
+            </button>
+
+        </div>
+
+    </article>
+
+
+    <article
+        class="gallery-card"
+        data-category="cars"
+        data-section="recent"
+        data-featured="false"
+        data-popular="false"
+        data-recent="true"
+        data-collection="sports-cars"
+    >
+
+        <div class="image-wrapper">
+
+            <img
+                src="images/cars/car-02.jpg"
+                alt="Sports car"
+            >
+
+            <div class="image-overlay">
+
+                <button
+                    type="button"
+                    class="image-action favorite-btn"
+                    aria-label="Add to favorites"
+                >
+                    ♥
+                </button>
+
+                <button
+                    type="button"
+                    class="image-action view-btn"
+                    aria-label="View image"
+                >
+                    ⛶
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="image-info">
+
+            <div>
+                <h3>Speed & Style</h3>
+                <p>Cars</p>
+            </div>
+
+            <button
+                type="button"
+                class="save-btn"
+                aria-label="Save image"
+            >
+                📌
+            </button>
+
+        </div>
+
+    </article>
+
+
+    <!-- ================================
+         CHARACTER IMAGES
+    ================================= -->
+
+    <article
+        class="gallery-card"
+        data-category="characters"
+        data-section="featured"
+        data-featured="true"
+        data-popular="true"
+        data-recent="false"
+        data-collection="character-world"
+    >
+
+        <div class="image-wrapper">
+
+            <img
+                src="images/characters/character-01.jpg"
+                alt="Animated character"
+            >
+
+            <div class="image-overlay">
+
+                <button
+                    type="button"
+                    class="image-action favorite-btn"
+                    aria-label="Add to favorites"
+                >
+                    ♥
+                </button>
+
+                <button
+                    type="button"
+                    class="image-action view-btn"
+                    aria-label="View image"
+                >
+                    ⛶
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="image-info">
+
+            <div>
+                <h3>Character World</h3>
+                <p>Characters</p>
+            </div>
+
+            <button
+                type="button"
+                class="save-btn"
+                aria-label="Save image"
+            >
+                📌
+            </button>
+
+        </div>
+
+    </article>
+
+
+    <article
+        class="gallery-card"
+        data-category="characters"
+        data-section="recent"
+        data-featured="false"
+        data-popular="false"
+        data-recent="true"
+        data-collection="character-world"
+    >
+
+        <div class="image-wrapper">
+
+            <img
+                src="images/characters/character-02.jpg"
+                alt="Cartoon character"
+            >
+
+            <div class="image-overlay">
+
+                <button
+                    type="button"
+                    class="image-action favorite-btn"
+                    aria-label="Add to favorites"
+                >
+                    ♥
+                </button>
+
+                <button
+                    type="button"
+                    class="image-action view-btn"
+                    aria-label="View image"
+                >
+                    ⛶
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="image-info">
+
+            <div>
+                <h3>Dream Character</h3>
+                <p>Characters</p>
+            </div>
+
+            <button
+                type="button"
+                class="save-btn"
+                aria-label="Save image"
+            >
+                📌
+            </button>
+
+        </div>
+
+    </article>
+
+
+    <!-- ================================
+         ART IMAGES
+    ================================= -->
+
+    <article
+        class="gallery-card"
+        data-category="art"
+        data-section="popular"
+        data-featured="true"
+        data-popular="true"
+        data-recent="false"
+        data-collection="creative-art"
+    >
+
+        <div class="image-wrapper">
+
+            <img
+                src="images/art/art-01.jpg"
+                alt="Creative artwork"
+            >
+
+            <div class="image-overlay">
+
+                <button
+                    type="button"
+                    class="image-action favorite-btn"
+                    aria-label="Add to favorites"
+                >
+                    ♥
+                </button>
+
+                <button
+                    type="button"
+                    class="image-action view-btn"
+                    aria-label="View image"
+                >
+                    ⛶
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="image-info">
+
+            <div>
+                <h3>Creative Vision</h3>
+                <p>Art</p>
+            </div>
+
+            <button
+                type="button"
+                class="save-btn"
+                aria-label="Save image"
+            >
+                📌
+            </button>
+
+        </div>
+
+    </article>
+
+
+    <article
+        class="gallery-card"
+        data-category="art"
+        data-section="recent"
+        data-featured="false"
+        data-popular="false"
+        data-recent="true"
+        data-collection="creative-art"
+    >
+
+        <div class="image-wrapper">
+
+            <img
+                src="images/art/art-02.jpg"
+                alt="Modern artwork"
+            >
+
+            <div class="image-overlay">
+
+                <button
+                    type="button"
+                    class="image-action favorite-btn"
+                    aria-label="Add to favorites"
+                >
+                    ♥
+                </button>
+
+                <button
+                    type="button"
+                    class="image-action view-btn"
+                    aria-label="View image"
+                >
+                    ⛶
+                </button>
+
+            </div>
+
+        </div>
+
+        <div class="image-info">
+
+            <div>
+                <h3>Modern Expression</h3>
+                <p>Art</p>
+            </div>
+
+            <button
+                type="button"
+                class="save-btn"
+                aria-label="Save image"
+            >
+                📌
+            </button>
+
+        </div>
+
+    </article>
+
+
+</section>
+        <!-- =========================================
+             IMAGE LIGHTBOX / DETAIL VIEW
+        ========================================== -->
+
+        <div
+            class="lightbox"
+            id="lightbox"
+            aria-hidden="true"
+        >
+
+            <div class="lightbox-overlay"></div>
+
+            <div class="lightbox-content">
+
+                <!-- Close Button -->
+                <button
+                    type="button"
+                    class="lightbox-close"
+                    id="lightboxClose"
+                    aria-label="Close image"
+                >
+                    &times;
+                </button>
+
+
+                <!-- Previous Button -->
+                <button
+                    type="button"
+                    class="lightbox-nav lightbox-prev"
+                    id="lightboxPrev"
+                    aria-label="Previous image"
+                >
+                    &#10094;
+                </button>
+
+
+                <!-- Main Image Area -->
+                <div class="lightbox-image-area">
+
+                    <img
+                        src=""
+                        alt=""
+                        id="lightboxImage"
+                    >
+
+                </div>
+
+
+                <!-- Next Button -->
+                <button
+                    type="button"
+                    class="lightbox-nav lightbox-next"
+                    id="lightboxNext"
+                    aria-label="Next image"
+                >
+                    &#10095;
+                </button>
+
+
+                <!-- Image Information -->
+                <div class="lightbox-info">
+
+                    <div class="lightbox-text">
+
+                        <span
+                            class="lightbox-category"
+                            id="lightboxCategory"
+                        >
+                            Nature
+                        </span>
+
+                        <h2 id="lightboxTitle">
+                            Image Title
+                        </h2>
+
+                        <p id="lightboxDescription">
+                            Image description will appear here.
+                        </p>
+
+                    </div>
+
+
+                    <!-- Lightbox Actions -->
+                    <div class="lightbox-actions">
+
+                        <button
+                            type="button"
+                            class="lightbox-action favorite-lightbox-btn"
+                            id="lightboxFavorite"
+                            aria-label="Add to favorites"
+                        >
+                            <span class="favorite-icon">♡</span>
+                            <span>Favorite</span>
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="lightbox-action save-lightbox-btn"
+                            id="lightboxSave"
+                            aria-label="Save image"
+                        >
+                            <span>📌</span>
+                            <span>Save</span>
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Image Counter -->
+                <div
+                    class="lightbox-counter"
+                    id="lightboxCounter"
+                >
+                    1 / 120
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================================
+             UPLOAD MODAL
+        ========================================== -->
+
+        <div
+            class="modal upload-modal"
+            id="uploadModal"
+            aria-hidden="true"
+        >
+
+            <div class="modal-overlay"></div>
+
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+
+                    <div>
+                        <span class="modal-label">
+                            ADD TO GALLERY
+                        </span>
+
+                        <h2>Upload Image</h2>
+                    </div>
+
+                    <button
+                        type="button"
+                        class="modal-close"
+                        id="uploadModalClose"
+                        aria-label="Close upload window"
+                    >
+                        &times;
+                    </button>
+
+                </div>
+
+
+                <!-- Upload Form -->
+                <form
+                    class="upload-form"
+                    id="uploadForm"
+                >
+
+                    <!-- File Upload -->
+                    <div class="upload-field">
+
+                        <label for="imageFile">
+                            Choose Image
+                        </label>
+
+                        <div
+                            class="file-upload-area"
+                            id="fileUploadArea"
+                        >
+
+                            <input
+                                type="file"
+                                id="imageFile"
+                                name="imageFile"
+                                accept="image/*"
+                                required
+                            >
+
+                            <div class="file-upload-content">
+
+                                <span class="upload-icon">
+                                    ↑
+                                </span>
+
+                                <strong>
+                                    Choose an image
+                                </strong>
+
+                                <small>
+                                    JPG, JPEG, PNG or WEBP
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Image Preview -->
+                    <div
+                        class="upload-preview"
+                        id="uploadPreview"
+                    >
+
+                        <img
+                            src=""
+                            alt="Selected image preview"
+                            id="previewImage"
+                        >
+
+                    </div>
+
+
+                    <!-- Title -->
+                    <div class="upload-field">
+
+                        <label for="imageTitle">
+                            Image Title
+                        </label>
+
+                        <input
+                            type="text"
+                            id="imageTitle"
+                            name="imageTitle"
+                            placeholder="Enter image title"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- Description -->
+                    <div class="upload-field">
+
+                        <label for="imageDescription">
+                            Description
+                        </label>
+
+                        <textarea
+                            id="imageDescription"
+                            name="imageDescription"
+                            rows="4"
+                            placeholder="Write a short description..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- Category -->
+                    <div class="upload-field">
+
+                        <label for="imageCategory">
+                            Category
+                        </label>
+
+                        <select
+                            id="imageCategory"
+                            name="imageCategory"
+                            required
+                        >
+
+                            <option value="">
+                                Select Category
+                            </option>
+
+                            <option value="nature">
+                                Nature
+                            </option>
+
+                            <option value="animals">
+                                Animals
+                            </option>
+
+                            <option value="food">
+                                Food
+                            </option>
+
+                            <option value="cars">
+                                Cars
+                            </option>
+
+                            <option value="characters">
+                                Characters
+                            </option>
+
+                            <option value="art">
+                                Art
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Collection -->
+                    <div class="upload-field">
+
+                        <label for="imageCollection">
+                            Collection
+                        </label>
+
+                        <select
+                            id="imageCollection"
+                            name="imageCollection"
+                        >
+
+                            <option value="">
+                                No Collection
+                            </option>
+
+                            <option value="landscapes">
+                                Landscapes
+                            </option>
+
+                            <option value="wildlife">
+                                Wildlife
+                            </option>
+
+                            <option value="desserts">
+                                Desserts
+                            </option>
+
+                            <option value="luxury-cars">
+                                Luxury Cars
+                            </option>
+
+                            <option value="sports-cars">
+                                Sports Cars
+                            </option>
+
+                            <option value="character-world">
+                                Character World
+                            </option>
+
+                            <option value="creative-art">
+                                Creative Art
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- Form Buttons -->
+                    <div class="upload-form-actions">
+
+                        <button
+                            type="button"
+                            class="cancel-btn"
+                            id="uploadCancel"
+                        >
+                            Cancel
+                        </button>
+
+                        <button
+                            type="submit"
+                            class="submit-upload-btn"
+                        >
+                            <span>+</span>
+                            Add to Gallery
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================================
+             COLLECTIONS PANEL
+        ========================================== -->
+
+        <div
+            class="collections-panel"
+            id="collectionsPanel"
+            aria-hidden="true"
+        >
+
+            <div class="collections-header">
+
+                <div>
+                    <span class="section-label">
+                        EXPLORE
+                    </span>
+
+                    <h2>
+                        Collections
+                    </h2>
+
+                    <p>
+                        Discover images grouped by theme
+                    </p>
+                </div>
+
+                <button
+                    type="button"
+                    class="collections-close"
+                    id="collectionsClose"
+                    aria-label="Close collections"
+                >
+                    &times;
+                </button>
+
+            </div>
+
+
+            <!-- Collection Cards -->
+            <div class="collections-grid">
+
+
+                <!-- Landscapes -->
+                <button
+                    type="button"
+                    class="collection-card"
+                    data-collection="landscapes"
+                >
+
+                    <div class="collection-icon">
+                        🏔️
+                    </div>
+
+                    <div class="collection-card-text">
+
+                        <h3>Landscapes</h3>
+
+                        <p>
+                            Mountains, lakes and beautiful views
+                        </p>
+
+                    </div>
+
+                </button>
+
+
+                <!-- Wildlife -->
+                <button
+                    type="button"
+                    class="collection-card"
+                    data-collection="wildlife"
+                >
+
+                    <div class="collection-icon">
+                        🐾
+                    </div>
+
+                    <div class="collection-card-text">
+
+                        <h3>Wildlife</h3>
+
+                        <p>
+                            Amazing animals and wild moments
+                        </p>
+
+                    </div>
+
+                </button>
+
+
+                <!-- Desserts -->
+                <button
+                    type="button"
+                    class="collection-card"
+                    data-collection="desserts"
+                >
+
+                    <div class="collection-icon">
+                        🍰
+                    </div>
+
+                    <div class="collection-card-text">
+
+                        <h3>Sweet Delights</h3>
+
+                        <p>
+                            Cakes, desserts and sweet creations
+                        </p>
+
+                    </div>
+
+                </button>
+
+
+                <!-- Luxury Cars -->
+                <button
+                    type="button"
+                    class="collection-card"
+                    data-collection="luxury-cars"
+                >
+
+                    <div class="collection-icon">
+                        🚘
+                    </div>
+
+                    <div class="collection-card-text">
+
+                        <h3>Luxury Cars</h3>
+
+                        <p>
+                            Premium cars and elegant designs
+                        </p>
+
+                    </div>
+
+                </button>
+
+
+                <!-- Sports Cars -->
+                <button
+                    type="button"
+                    class="collection-card"
+                    data-collection="sports-cars"
+                >
+
+                    <div class="collection-icon">
+                        🏎️
+                    </div>
+
+                    <div class="collection-card-text">
+
+                        <h3>Sports Cars</h3>
+
+                        <p>
+                            Speed, power and performance
+                        </p>
+
+                    </div>
+
+                </button>
+
+
+                <!-- Characters -->
+                <button
+                    type="button"
+                    class="collection-card"
+                    data-collection="character-world"
+                >
+
+                    <div class="collection-icon">
+                        🧸
+                    </div>
+
+                    <div class="collection-card-text">
+
+                        <h3>Character World</h3>
+
+                        <p>
+                            Fun and creative characters
+                        </p>
+
+                    </div>
+
+                </button>
+
+
+                <!-- Art -->
+                <button
+                    type="button"
+                    class="collection-card"
+                    data-collection="creative-art"
+                >
+
+                    <div class="collection-icon">
+                        🎨
+                    </div>
+
+                    <div class="collection-card-text">
+
+                        <h3>Creative Art</h3>
+
+                        <p>
+                            Artistic and creative expressions
+                        </p>
+
+                    </div>
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =========================================
+             NO RESULTS MESSAGE
+        ========================================== -->
+
+        <div
+            class="empty-state"
+            id="noResults"
+            aria-hidden="true"
+        >
+
+            <div class="empty-icon">
+                🔍
+            </div>
+
+            <h2>No Images Found</h2>
+
+            <p>
+                We couldn't find any images matching your search.
+            </p>
+
+            <button
+                type="button"
+                class="reset-search-btn"
+                id="resetSearch"
+            >
+                Show All Images
+            </button>
+
+        </div>
+
+
+
+        <!-- =========================================
+             EMPTY FAVORITES MESSAGE
+        ========================================== -->
+
+        <div
+            class="empty-state favorites-empty"
+            id="emptyFavorites"
+            aria-hidden="true"
+        >
+
+            <div class="empty-icon">
+                ♡
+            </div>
+
+            <h2>No Favorites Yet</h2>
+
+            <p>
+                Images you love will appear here.
+            </p>
+
+            <button
+                type="button"
+                class="browse-gallery-btn"
+                id="browseGallery"
+            >
+                Browse Gallery
+            </button>
+
+        </div>
+
+
+
+        <!-- =========================================
+             EMPTY SAVED MESSAGE
+        ========================================== -->
+
+        <div
+            class="empty-state saved-empty"
+            id="emptySaved"
+            aria-hidden="true"
+        >
+
+            <div class="empty-icon">
+                📌
+            </div>
+
+            <h2>No Saved Images</h2>
+
+            <p>
+                Save your favorite images to find them here.
+            </p>
+
+            <button
+                type="button"
+                class="browse-saved-btn"
+                id="browseSaved"
+            >
+                Browse Gallery
+            </button>
+
+        </div>
+
+
+
+        <!-- =========================================
+             TOAST NOTIFICATION
+        ========================================== -->
+
+        <div
+            class="toast"
+            id="toast"
+            role="status"
+            aria-live="polite"
+        >
+
+            <span
+                class="toast-icon"
+                id="toastIcon"
+            >
+                ✓
+            </span>
+
+            <span
+                class="toast-message"
+                id="toastMessage"
+            >
+                Image saved successfully.
+            </span>
+
+        </div>
+        </main>
+
+        <!-- PART 03 KA CODE YAHAN -->
+        <!-- Lightbox -->
+        <!-- Upload Modal -->
+        <!-- Collections -->
+        <!-- Empty States -->
+        <!-- Toast -->
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
